@@ -5,11 +5,11 @@ import sys
 from telethon import TelegramClient
 from telethon.errors import SessionPasswordNeededError
 
-API_ID = 23966686
-API_HASH = "0ba67a50ec826a4bbb5eb6a80c369bfc"
-PHONE = "+201130413670"
-PASSWORD = "Medo@292005"
-SESSION_NAME = "my_telegram_session"
+API_ID = int(os.getenv("TELEGRAM_API_ID", "0"))
+API_HASH = os.getenv("TELEGRAM_API_HASH", "")
+PHONE = os.getenv("TELEGRAM_PHONE", "")
+PASSWORD = os.getenv("TELEGRAM_PASSWORD", "")
+SESSION_NAME = os.getenv("TELEGRAM_SESSION_NAME", "telegram_session")
 
 STATUS_FILE = "telegram_login_status.json"
 

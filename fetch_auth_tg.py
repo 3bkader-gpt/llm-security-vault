@@ -12,9 +12,9 @@ from telethon.tl.types import DialogFilter, DialogFilterChatlist
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-API_ID = 23966686
-API_HASH = "0ba67a50ec826a4bbb5eb6a80c369bfc"
-SESSION_NAME = "my_telegram_session"
+API_ID = int(os.getenv("TELEGRAM_API_ID", "0"))
+API_HASH = os.getenv("TELEGRAM_API_HASH", "")
+SESSION_NAME = os.getenv("TELEGRAM_SESSION_NAME", "telegram_session")
 
 BASE_VAULT = Path("auth_bypass_vault")
 DIR_TG = BASE_VAULT / "02_telegram_writeups_and_articles"
